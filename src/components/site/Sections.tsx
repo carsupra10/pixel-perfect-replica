@@ -91,7 +91,7 @@ export function Marquee() {
 function SectionHead({ label, title, subtitle, light }: { label: string; title?: string; subtitle?: string; light?: boolean }) {
   return (
     <div className="mb-14 grid gap-6 md:mb-20 lg:grid-cols-12">
-      <div className="lg:col-span-3"><Label light={light}>{label}</Label></div>
+      <div className="lg:col-span-3"><Label light={!!light}>{label}</Label></div>
       <div className="lg:col-span-9">
         {title && <RevealText text={title} className={`${display} text-5xl md:text-7xl lg:text-8xl ${light ? "" : "text-primary"}`} />}
         {subtitle && <FadeIn><p className={`mt-6 max-w-lg text-lg ${light ? "opacity-80" : "text-muted-foreground"}`}>{subtitle}</p></FadeIn>}
