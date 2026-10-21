@@ -19,20 +19,24 @@ export function FadeIn({ children, className = "", delay = 0 }: { children: Reac
   );
 }
 
-/** Reveals a headline word-line by word-line. */
-export function RevealText({ text, className = "", as: Tag = "h2" }: { text: string; className?: string; as?: "h1" | "h2" | "p" }) {
+/** Reveals a headline word by word. The parent observes the viewport (clipped children can't). */
+export function RevealText({ text, className = "", as = "h2" }: { text: string; className?: string; as?: "h1" | "h2" | "p" }) {
   const reduce = useReducedMotion();
-  const words = text.split(" ");
+  const Tag = motion[as];
   return (
-    <Tag className={className} aria-label={text}>
-      {words.map((w, i) => (
+    <Tag
+      className={className}
+      aria-label={text}
+      initial={reduce ? false : "hidden"}
+      whileInView="shown"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.05 }}
+    >
+      {text.split(" ").map((w, i) => (
         <span key={i} aria-hidden className="inline-block overflow-hidden pb-[0.08em] align-bottom">
           <motion.span
             className="inline-block"
-            initial={reduce ? false : { y: "110%" }}
-            whileInView={{ y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.9, ease, delay: i * 0.05 }}
+            variants={{ hidden: { y: "110%" }, shown: { y: 0, transition: { duration: 0.9, ease } } }}
           >
             {w}&nbsp;
           </motion.span>
