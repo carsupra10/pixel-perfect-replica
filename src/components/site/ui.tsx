@@ -48,8 +48,8 @@ export function RevealText({ text, className = "", as = "h2" }: { text: string; 
 
 export function Label({ children, light }: { children: ReactNode; light?: boolean }) {
   return (
-    <p className={`flex items-center gap-3 text-xs font-medium uppercase tracking-[0.2em] ${light ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-      <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+    <p className={`flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-accent`}>
+      
       {children}
     </p>
   );
