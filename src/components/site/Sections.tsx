@@ -154,9 +154,9 @@ export function Quote() {
     e.preventDefault();
     const data = Object.fromEntries(new FormData(e.currentTarget)) as unknown as QuoteData;
     const errs: Record<string, string> = {};
-    if (!data.name?.trim()) errs.name = "Please enter your full name.";
-    if (!data.phone?.trim() || !/^[+\d\s-]{7,}$/.test(data.phone)) errs.phone = "Please enter a valid phone number.";
-    if (!data.email?.trim() || !/^\S+@\S+\.\S+$/.test(data.email)) errs.email = "Please enter a valid email.";
+    if (!data.name?.trim()) errs["name"] = "Please enter your full name.";
+    if (!data.phone?.trim() || !/^[+\d\s-]{7,}$/.test(data.phone)) errs["phone"] = "Please enter a valid phone number.";
+    if (!data.email?.trim() || !/^\S+@\S+\.\S+$/.test(data.email)) errs["email"] = "Please enter a valid email.";
     setErrors(errs);
     if (Object.keys(errs).length) return;
     await sendQuoteRequest(data);
