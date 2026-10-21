@@ -5,7 +5,7 @@ import { about, company, gallery, hero_, marquee, navLinks, quoteOptions, sectio
 import { FadeIn, Label, RevealText, btnAccent, btnOutline } from "./ui";
 
 const wrap = "mx-auto max-w-[90rem] px-5 sm:px-8 lg:px-12";
-const display = "font-display font-bold tracking-[-0.04em] leading-[0.92]";
+const display = "font-display font-bold tracking-[-0.02em] leading-[0.95]";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -51,9 +51,8 @@ export function Hero() {
     <section id="top" ref={ref} className="relative flex min-h-dvh items-end overflow-hidden text-primary-foreground">
       <motion.img style={{ scale, y }} src={hero_.image} alt="Shipping container yard" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover" />
       <div className="absolute inset-0 bg-primary/40" />
-      <div className="absolute inset-0 bg-gradient-to-t from-deep/70 via-transparent to-transparent" />
       <div className={`${wrap} relative w-full pb-24 pt-32`}>
-        <RevealText as="h1" text={hero_.headline} className={`${display} max-w-6xl text-5xl sm:text-7xl lg:text-[8.5rem]`} />
+        <RevealText as="h1" text={hero_.headline} className={`${display} max-w-6xl text-5xl sm:text-7xl lg:text-8xl`} />
         <FadeIn delay={0.4} className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
           <p className="max-w-md text-lg opacity-90">{hero_.subheadline}</p>
           <div className="flex flex-col gap-3 sm:flex-row">
@@ -328,7 +327,7 @@ export function Footer() {
           </div>
           <p className="text-sm leading-relaxed opacity-70">{company.address}</p>
         </div>
-        <p className={`${display} py-8 text-[17vw] leading-none lg:text-[14vw]`}>{company.shortName}</p>
+        <p className={`${display} py-8 text-[17vw] leading-none lg:text-[12vw]`}>{company.shortName}</p>
         <p className="pb-8 text-sm opacity-70">© {company.fullName}. All Rights Reserved.</p>
       </div>
     </footer>
