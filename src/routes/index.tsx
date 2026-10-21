@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { About, Contact, Footer, Gallery, Header, Hero, Quote, Services, WhyUs } from "@/components/site/Sections";
+import { About, Contact, Footer, Gallery, Header, Hero, Marquee, Quote, Services, WhyUs } from "@/components/site/Sections";
+import { Cursor, ProgressBar, useSmoothScroll } from "@/components/site/ui";
 
 const title = "Mission Ocean | Container Leasing, Rental & Sales in Chennai";
 const description =
@@ -20,11 +21,15 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  useSmoothScroll();
   return (
     <>
+      <ProgressBar />
+      <Cursor />
       <Header />
       <main>
         <Hero />
+        <Marquee />
         <Services />
         <About />
         <Gallery />
