@@ -22,11 +22,21 @@ export const company = {
 export const navLinks = [
   { label: "Services", href: "#services" },
   { label: "About", href: "#about" },
-  { label: "Why Us", href: "#why-us" },
   { label: "Gallery", href: "#gallery" },
-  { label: "Get a Quote", href: "#quote" },
+  { label: "Why Us", href: "#why-us" },
   { label: "Contact", href: "#contact" },
 ];
+
+export const marquee = ["Leasing", "Rental", "Sales", "Logistics", "Custom Solutions"];
+
+export const sections = {
+  services: { label: "01 — What We Do", title: "Five ways we support your supply chain" },
+  about: { label: "02 — About Us" },
+  gallery: { label: "03 — Fabricated Containers", title: "Built for the job", subtitle: "Containers fabricated for specific operational needs." },
+  whyUs: { label: "04 — Why Mission Ocean", title: "Why customers choose us" },
+  quote: { label: "05 — Get a Quote", title: "Tell us what you need", subtitle: "Our team will get back to you shortly.", success: "Thank you. Our team will contact you shortly." },
+  contact: { label: "06 — Contact", title: "Visit or call us" },
+};
 
 export const hero_ = {
   image: hero,
@@ -44,7 +54,8 @@ export const services = [
 ] as const;
 
 export const about = {
-  text: "Mission Ocean Shipping and Logistics Pvt Ltd is a professionally managed company specializing in container leasing, rental, and sales. We provide reliable, flexible container solutions for shipping lines, freight forwarders, logistics companies, exporters, importers, and traders across global supply chains. We believe strong business relationships are built on trust, transparency, reliability, and consistent service.",
+  statement: "Mission Ocean Shipping and Logistics Pvt Ltd is a professionally managed company specializing in container leasing, rental, and sales.",
+  text: "We provide reliable, flexible container solutions for shipping lines, freight forwarders, logistics companies, exporters, importers, and traders across global supply chains. We believe strong business relationships are built on trust, transparency, reliability, and consistent service.",
   vision: "To become a trusted and leading partner in the global container leasing, rental, and sales industry, delivering reliable, cost-effective, and flexible container solutions that support seamless logistics and international trade.",
   mission: "To provide high-quality, dependable, and flexible container solutions tailored to our customers' needs.",
 };
