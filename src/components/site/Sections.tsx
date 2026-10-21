@@ -136,7 +136,7 @@ export function WhyUs() {
   );
 }
 
-export type QuoteData = Record<string, string>;
+export type QuoteData = { name?: string; company?: string; phone?: string; email?: string; service?: string; size?: string; quantity?: string; location?: string; message?: string };
 
 /** Placeholder: connect this to your backend / email service later. */
 export async function sendQuoteRequest(data: QuoteData): Promise<void> {
@@ -152,7 +152,7 @@ export function Quote() {
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(e.currentTarget)) as QuoteData;
+    const data = Object.fromEntries(new FormData(e.currentTarget)) as unknown as QuoteData;
     const errs: Record<string, string> = {};
     if (!data.name?.trim()) errs.name = "Please enter your full name.";
     if (!data.phone?.trim() || !/^[+\d\s-]{7,}$/.test(data.phone)) errs.phone = "Please enter a valid phone number.";
